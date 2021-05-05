@@ -83,7 +83,7 @@ pipeline {
 	   	agent any
 		steps {
                 	script {
-				curl curl https://antoine-staging.herokuapp.com | grep -q "Hello world" | grep -q "Hello world"
+				sh 'curl https://antoine-staging.herokuapp.com | grep -q "Hello world" | grep -q "Hello world"'
 			}
 		}
    	}
@@ -110,7 +110,7 @@ pipeline {
 	   	agent any
 		steps {
                 	script {
-				curl https://antoine-production.herokuapp.com | grep -q "Hello world"
+				sh 'curl https://antoine-production.herokuapp.com | grep -q "Hello world"'
 			}
 		}
    	}

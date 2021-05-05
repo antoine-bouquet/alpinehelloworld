@@ -79,6 +79,14 @@ pipeline {
                 }
             }
         }
+    	stage('test image in staging') {
+	   	agent any
+		steps {
+                	script {
+				curl curl https://antoine-staging.herokuapp.com | grep -q "Hello world" | grep -q "Hello world"
+			}
+		}
+   	}
         stage('Push image in production and deploy it') {
             when {
               expression { GIT_BRANCH == 'origin/master' }
@@ -98,6 +106,13 @@ pipeline {
                 }
             }
         }
-        
+        stage('test image in production') {
+	   	agent any
+		steps {
+                	script {
+				curl https://antoine-production.herokuapp.com | grep -q "Hello world"
+			}
+		}
+   	}
     }
 }

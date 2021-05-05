@@ -87,7 +87,7 @@ pipeline {
 		steps {
                 	script {
 				sh '''
-				curl https://${STAGING} | grep -q "Hello world" | grep -q "Hello world"
+				curl https://${STAGING}.herokuapp.com | grep -q "Hello world" | grep -q "Hello world"
 				'''
 			}
 		}
@@ -116,7 +116,7 @@ pipeline {
 		steps {
                 	script {
 				sh '''
-				curl https://antoine-production.herokuapp.com | grep -q "Hello world"
+				curl https://${PRODUCTION}.herokuapp.com | grep -q "Hello world"
 				'''
 			}
 		}

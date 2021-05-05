@@ -12,7 +12,6 @@ pipeline {
             steps {
                 script {
                     echo 'Building..'
-                    cd alpinehelloworld
                     sh 'docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .'
                 }
             }

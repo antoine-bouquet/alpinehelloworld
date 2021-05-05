@@ -6,6 +6,7 @@ pipeline {
         PRODUCTION = "antoine-production"
         IMAGE_REPO = "antoinebouquet1010"
     }
+    agent none
     stages {
         stage('Build Image') {
             agent any

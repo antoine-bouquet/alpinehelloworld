@@ -46,13 +46,11 @@ pipeline {
                 }
             }
         }
-	    stage('Push image on dockerhub') {
+	stage('Push image on dockerhub') {
            agent any 
            environment {
                 DOCKERHUB_LOGIN = credentials('ded4d165-8a67-471f-8797-a6a89d48abc9')
-                
             }
-
            steps {
                script {
                    sh '''
